@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+.active {
+  @apply text-indigo-600 font-semibold;
+}
+
+.hideMenu {
+  height: 0;
+  transition: height 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+.autoHeight {
+  height: 64px;
+  transition: height 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+.showMenu {
+  height: 100vh;
+  transition: height 0.4s ease-in-out;
+  overflow: hidden;
+}
