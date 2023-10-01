@@ -36,9 +36,9 @@ const Projects = () => {
           return (
             <div
               key={id}
-              className="flex flex-col lg:flex-row lg:px-5 lg:py-5 justify-between items-center p-3 border dark:border-slate-600 dark:bg-slate-800 border-gray-300 bg-white rounded-md"
+              className="flex flex-col lg:flex-row lg:px-7 lg:py-5 justify-between items-center p-3 border dark:border-slate-600 dark:bg-slate-800 border-gray-300 bg-white rounded-md"
             >
-              <div className=" w-[95%] lg:w-[50%] mb-5 lg:mb-0">
+              <div className=" w-[95%] lg:w-[47%] mb-5 lg:mb-0">
                 <img src={img} alt="" />
               </div>
               <div

@@ -42,7 +42,7 @@ const Navbar = ({ theme, setTheme }) => {
                   key={id}
                   className={` ${
                     active === url ? "active" : ""
-                  } cursor-pointer hover:text-indigo-600 transition-all duration-100`}
+                  } cursor-pointer dark:hover:text-gray-400 hover:text-gray-500 transition-all duration-100`}
                 >
                   <a href={url}>{title}</a>
                 </li>
