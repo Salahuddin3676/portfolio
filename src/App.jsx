@@ -5,6 +5,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
+import { socialLinks } from "./data";
 
 export default function App() {
   const [theme, setTheme] = useState(null);
@@ -30,7 +31,7 @@ export default function App() {
     <div>
       <Navbar theme={theme} setTheme={setTheme} />
       <div
-        className={`bg-[#f9f9f9e1] dark:bg-slate-900 dark:text-white  duration-700 delay-100 px-6 md:px-16 lg:px-16 xl:px-40 flex items-center flex-col`}
+        className={`bg-[#f9f9f9e1] dark:bg-[#23252F] dark:text-white  duration-700 delay-100 px-6 md:px-16 lg:px-16 xl:px-40 flex items-center flex-col`}
       >
         <Home />
         <About />

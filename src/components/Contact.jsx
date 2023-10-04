@@ -30,7 +30,7 @@ const Contact = () => {
         <div className="flex flex-col items-center md:items-start">
           <h1
             data-aos="fade-up"
-            className="text-4xl lg:text-6xl font-bold dark:text-cyan-200 text-indigo-950 font-Poppins mb-5 md:text-left "
+            className="text-4xl lg:text-5xl font-bold dark:text-yellow-100 text-indigo-950 font-Poppins mb-5 md:text-left "
           >
             Contact Me
           </h1>
@@ -52,7 +52,7 @@ const Contact = () => {
                 key={id}
                 className="flex items-center md:w-[45%] md:justify-start justify-center gap-3.5 flex-col md:flex-row "
               >
-                <div className=" rounded-full p-6 border border-gray-300 flex items-center justify-center text-3xl lg:text-4xl bg-white  text-red-600">
+                <div className=" rounded-full p-5 border border-gray-300 flex items-center justify-center text-3xl lg:text-4xl bg-white  text-red-600">
                   {icon}
                 </div>
                 <div className="flex items-center gap-2 md:items-start justify-center flex-col">

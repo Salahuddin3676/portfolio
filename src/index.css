@@ -7,7 +7,7 @@
 }
 
 .active {
-  @apply dark:text-gray-400 underline underline-offset-8 duration-200 text-gray-500 font-semibold;
+  @apply dark:text-gray-400 border-b border-gray-400 font-semibold;
 }
 
 .hideMenu {

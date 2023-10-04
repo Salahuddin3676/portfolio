@@ -19,14 +19,14 @@ const Projects = () => {
       id="projects"
       className="pt-20 flex flex-col items-center lg:items-start w-full min-h-screen"
     >
-      <h1 className="text-4xl lg:text-6xl font-bold dark:text-cyan-200 text-indigo-950 font-Poppins mb-8 lg:text-left ">
+      <h1 className="text-4xl lg:text-5xl font-bold dark:text-yellow-100 text-indigo-950 font-Poppins mb-4 lg:text-left ">
         Projects
       </h1>
       <p
         data-aos="fade-right"
         className="font-Montserrat leading-7 text-center lg:text-left dark:text-gray-300 max-w-4xl mb-12"
       >
-        Here are the projects that I developed
+        Here are the projects that I developed 👇
       </p>
 
       <div className="flex flex-col w-full justify-between gap-10 items-center">
@@ -36,16 +36,16 @@ const Projects = () => {
           return (
             <div
               key={id}
-              className="flex flex-col lg:flex-row lg:px-7 lg:py-5 justify-between items-center p-3 border dark:border-slate-600 dark:bg-slate-800 border-gray-300 bg-white rounded-md"
+              className="flex flex-col lg:flex-row lg:px-10 lg:py-5 justify-between items-center p-3 border dark:border-slate-600 dark:bg-teal-950 border-gray-300 bg-white rounded-md"
             >
-              <div className=" w-[95%] lg:w-[47%] mb-5 lg:mb-0">
-                <img src={img} alt="" />
+              <div className=" w-[95%] rounded-sm lg:w-[48%] mb-5 lg:mb-0">
+                <img src={img} className=" rounded-sm" alt="" />
               </div>
               <div
                 data-aos="fade-left"
                 className=" w-full lg:w-[45%] h-full py-5"
               >
-                <h3 className="font-bold text-2xl lg:text-4xl font-Poppins text-center mb-5">
+                <h3 className="font-bold text-2xl lg:text-3xl font-Poppins text-center mb-5">
                   {title}
                 </h3>
                 <p className="font-Montserrat leading-7 text-center dark:text-gray-300 mb-6">

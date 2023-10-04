@@ -3,11 +3,11 @@ import { socialLinks } from "../data";
 
 const Footer = () => {
   return (
-    <footer className=" px-3 md:px-16 lg:px-28 py-10 flex items-center justify-center font-bold bg-slate-800 text-white w-full">
+    <footer className=" z-[100] px-3 md:px-16 lg:px-28 py-10 flex items-center justify-center font-bold bg-slate-950 text-white w-full">
       <div className="flex flex-col gap-4 w-full lg:flex-row-reverse items-center lg:justify-between ">
         <div className=" flex flex-row-reverse items-center justify-center gap-4 text-3xl">
           {socialLinks.map((link) => {
-            const { id, icon, url, title } = link;
+            const { id, icon, url } = link;
             return (
               <a
                 href={url}

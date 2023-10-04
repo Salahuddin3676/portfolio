@@ -27,7 +27,7 @@ const Home = () => {
           />
         </div>
         <div data-aos="fade-right" className="w-full lg:w-1/2">
-          <h1 className=" dark:text-white text-4xl text-center lg:text-left leading-[48px] lg:leading-[70px] lg:text-6xl lg:max-w-max max-w-sm mx-auto lg:mx-0 font-bold font-Poppins mb-7">
+          <h1 className=" dark:text-yellow-50 text-4xl text-center lg:text-left leading-[48px] lg:leading-[70px] lg:text-6xl lg:max-w-max max-w-sm mx-auto lg:mx-0 font-bold font-Poppins mb-7">
             Front-End React Developer
           </h1>
           <p className="dark:text-gray-200 font-Montserrat tracking-wide lg:max-w-md max-w-md mx-auto lg:mx-0 mb-10 text-center lg:text-left">

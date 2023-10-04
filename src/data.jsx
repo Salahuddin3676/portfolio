@@ -66,13 +66,13 @@ export const skills = [
   },
   {
     id: 3,
-    title: "Sass",
-    icon: <FaSass />,
+    title: "JavaScript",
+    icon: <RiJavascriptFill />,
   },
   {
     id: 4,
-    title: "JavaScript",
-    icon: <RiJavascriptFill />,
+    title: "Sass",
+    icon: <FaSass />,
   },
   {
     id: 5,
@@ -95,7 +95,7 @@ export const projects = [
   {
     id: 1,
     img: img1,
-    title: "Project 1",
+    title: "Complete Weather App",
     info: "This is an app built using React, It uses useEffect, useState and useRef hooks, It is an App used to prepare a list for grocery.",
     techUsed: ["#react", "#tailwind"],
     githubLink: "#",
@@ -104,7 +104,7 @@ export const projects = [
   {
     id: 2,
     img: img2,
-    title: "Project 2",
+    title: "Car Rent Site",
     info: "This is an app built using React, It uses useEffect, useState and useRef hooks, It is an App used to prepare a list for grocery.",
     techUsed: ["#react", "#tailwind"],
     githubLink: "#",
@@ -113,7 +113,7 @@ export const projects = [
   {
     id: 3,
     img: img3,
-    title: "Project 3",
+    title: "E-Commerce Furniture",
     info: "This is an app built using React, It uses useEffect, useState and useRef hooks, It is an App used to prepare a list for grocery.",
     techUsed: ["#react", "#tailwind"],
     githubLink: "#",

@@ -20,7 +20,7 @@ const About = () => {
       <div className="w-full flex flex-col items-center lg:items-start">
         <h1
           data-aos="fade-up"
-          className="text-4xl lg:text-6xl font-bold dark:text-cyan-200 text-indigo-950 font-Poppins mb-8 lg:text-left "
+          className="text-4xl lg:text-5xl font-bold dark:text-yellow-100 text-indigo-950 font-Poppins mb-8 lg:text-left "
         >
           About Me
         </h1>
@@ -55,12 +55,14 @@ const About = () => {
                 <div
                   data-aos="zoom-in"
                   key={id}
-                  className={`flex w-[102px] relative h-[102px] p-2 dark:odd:text-indigo-700 dark:even:text-green-600 odd:text-indigo-700 even:text-green-600 bg-cyan-100 border border-gray-300 dark:border-slate-600 text-black dark:bg-slate-800 dark:text-white flex-col ${
-                    title === "Responsive Design" ? "gap-1.5" : "gap-3"
-                  } items-center justify-center  rounded-lg`}
+                  className={`flex w-24 h-24 p-2 border dark:bg-teal-950 bg-white border-gray-300 dark:border-gray-600 text-black  dark:text-white flex-col gap-1 items-center justify-center  rounded-lg`}
                 >
                   <div
-                    className={` bg-white border text-4xl rounded-full p-1.5`}
+                    className={` ${
+                      title === "Responsive Design"
+                        ? "text-3xl md:text-[28px]"
+                        : ""
+                    } flex items-center justify-center text-4xl md:text-5xl rounded-full p-1.5`}
                   >
                     {icon}
                   </div>

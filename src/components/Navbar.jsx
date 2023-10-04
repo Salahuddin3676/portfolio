@@ -9,9 +9,9 @@ const Navbar = ({ theme, setTheme }) => {
 
   return (
     <nav
-      className={`fixed z-50 bg-white duration-800 delay-200 dark:bg-slate-800 dark:text-white top-0 ${
+      className={`fixed z-50 bg-white duration-800 delay-200 dark:bg-teal-950 dark:text-white top-0 ${
         isMenuOpen ? "showMenu" : "autoHeight"
-      } h-16 left-0 w-full shadow-lg py-4 px-6 md:px-16 lg:px-28 flex flex-col lg:flex-row justify-between items-center`}
+      } h-16 left-0 w-full shadow-md dark:shadow-slate-900 py-4 px-6 md:px-16 lg:px-28 flex flex-col lg:flex-row justify-between items-center`}
     >
       <div className="flex justify-between items-center w-full">
         <h2 className=" font-bold font-Poppins text-xl bg-clip-text bg-gradient-to-br from-red-700 to-black duration-800 delay-200 dark:bg-gradient-to-br dark:from-white dark:to-indigo-400 text-transparent">
@@ -36,15 +36,20 @@ const Navbar = ({ theme, setTheme }) => {
               const { id, title, url } = links;
               return (
                 <li
-                  onClick={() => {
-                    setActive(`${url}`);
-                  }}
                   key={id}
-                  className={` ${
-                    active === url ? "active" : ""
-                  } cursor-pointer dark:hover:text-gray-400 hover:text-gray-500 transition-all duration-100`}
+                  className={` dark:hover:text-gray-400 hover:text-gray-500 transition-all duration-100`}
                 >
-                  <a href={url}>{title}</a>
+                  <a
+                    onClick={() => {
+                      setActive(`${url}`);
+                    }}
+                    href={url}
+                    className={`${
+                      active === url ? "active" : ""
+                    } cursor-pointer py-1`}
+                  >
+                    {title}
+                  </a>
                 </li>
               );
             })}
