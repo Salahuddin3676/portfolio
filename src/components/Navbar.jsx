@@ -65,7 +65,7 @@ const Navbar = ({ theme, setTheme }) => {
       </div>
 
       <ul
-        className={`flex dark:bg-slate-800 dark:text-white z-20 flex-col w-full ${
+        className={`flex dark:bg-teal-950 dark:text-white z-20 flex-col w-full ${
           isMenuOpen ? "showMenu" : "hideMenu"
         } justify-center duration-700 delay-100 lg:hidden items-center gap-8 font-Montserrat font-medium`}
       >
