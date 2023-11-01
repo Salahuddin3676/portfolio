@@ -7,7 +7,7 @@ import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { FaLocationDot } from "react-icons/fa6";
 import { BsWhatsapp } from "react-icons/bs";
 import { BiLogoGmail } from "react-icons/bi";
-import img1 from "./assets/images/p1.jpg";
+import img1 from "./assets/images/pbg1.png";
 import img2 from "./assets/images/p2.jpg";
 import img3 from "./assets/images/p3.jpg";
 
@@ -95,11 +95,11 @@ export const projects = [
   {
     id: 1,
     img: img1,
-    title: "Complete Weather App",
-    info: "This is an app built using React, It uses useEffect, useState and useRef hooks, It is an App used to prepare a list for grocery.",
+    title: "Interior Design Service",
+    info: "Welcome to InDesign, where we turn your dream living spaces into reality. Our site, powered by React.js, offers a seamless and immersive experience that showcases our passion for creating beautiful and functional interiors.",
     techUsed: ["#react", "#tailwind"],
-    githubLink: "#",
-    demoLink: "#",
+    githubLink: "https://github.com/Salahuddin3676/interior-design",
+    demoLink: "https://salahuddin3676.github.io/interior-design/",
   },
   {
     id: 2,
