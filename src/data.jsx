@@ -105,7 +105,7 @@ export const projects = [
     id: 2,
     img: img2,
     title: "Notes Keeper App",
-    info: "This Notes Keeper App is a dynamic and user-friendly web application crafted with the power of React. This nifty tool is designed to help users seamlessly jot down and organize their thoughts, ideas, and reminders in a sleek and intuitive interface.",
+    info: "This Notes Keeper App is a dynamic and user-friendly web application crafted using React. This nifty tool is designed to help users seamlessly jot down and organize their thoughts, ideas, and reminders in a sleek and intuitive interface.",
     techUsed: ["#react", "#tailwind"],
     githubLink: "https://github.com/Salahuddin3676/notes-keeper",
     demoLink: "https://salahuddin3676.github.io/notes-keeper/",
