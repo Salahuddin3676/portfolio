@@ -48,7 +48,7 @@ const Projects = () => {
                 <h3 className="mb-5 text-2xl font-bold text-center lg:text-3xl font-Poppins">
                   {title}
                 </h3>
-                <p className="mb-6 leading-7 text-center font-Montserrat dark:text-gray-300">
+                <p className="mb-6 text-[15px] leading-7 text-center font-Montserrat dark:text-gray-300">
                   {info}
                 </p>
                 <div className="flex items-center justify-center gap-3 mx-auto mb-8 rounded-sm w-44">
