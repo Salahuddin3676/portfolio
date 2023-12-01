@@ -39,7 +39,9 @@ const Projects = () => {
               className="flex flex-col items-center justify-between p-3 bg-white border border-gray-300 rounded-md lg:flex-row lg:px-10 lg:py-5 dark:border-slate-600 dark:bg-teal-950"
             >
               <div className=" w-[95%] rounded-sm lg:w-[48%] mb-5 lg:mb-0">
-                <img src={img} className="rounded-sm " alt="" />
+                <a href={demoLink} target="_blank">
+                  <img src={img} className="rounded-sm " alt="" />
+                </a>
               </div>
               <div
                 data-aos="fade-left"
