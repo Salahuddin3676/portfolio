@@ -96,7 +96,7 @@ export const projects = [
     id: 1,
     img: img1,
     title: "Interior Design Service",
-    info: "Welcome to InDesign, where we turn your dream living spaces into reality. Our site, powered by React.js, offers a seamless and immersive experience that showcases our passion for creating beautiful and functional interiors.",
+    info: "InDesign an interior design service site, where dream living spaces are turned into reality. This site, powered by React.js, offers a seamless and immersive experience that showcases my passion for creating functional and beautiful designs.",
     techUsed: ["#react", "#tailwind"],
     githubLink: "https://github.com/Salahuddin3676/interior-design",
     demoLink: "https://salahuddin3676.github.io/interior-design/",
