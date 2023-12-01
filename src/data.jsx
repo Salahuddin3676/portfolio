@@ -8,8 +8,8 @@ import { FaLocationDot } from "react-icons/fa6";
 import { BsWhatsapp } from "react-icons/bs";
 import { BiLogoGmail } from "react-icons/bi";
 import img1 from "./assets/images/pbg1.png";
-import img2 from "./assets/images/p2.jpg";
-import img3 from "./assets/images/p3.jpg";
+import img2 from "./assets/images/notes.png";
+// import img3 from "./assets/images/p3.jpg";
 
 export const menuLinks = [
   {
@@ -104,21 +104,21 @@ export const projects = [
   {
     id: 2,
     img: img2,
-    title: "Car Rent Site",
-    info: "This is an app built using React, It uses useEffect, useState and useRef hooks, It is an App used to prepare a list for grocery.",
+    title: "Notes Keeper App",
+    info: "This Notes Keeper App is a dynamic and user-friendly web application crafted with the power of React. This nifty tool is designed to help users seamlessly jot down and organize their thoughts, ideas, and reminders in a sleek and intuitive interface.",
     techUsed: ["#react", "#tailwind"],
-    githubLink: "#",
-    demoLink: "#",
+    githubLink: "https://github.com/Salahuddin3676/notes-keeper",
+    demoLink: "https://salahuddin3676.github.io/notes-keeper/",
   },
-  {
-    id: 3,
-    img: img3,
-    title: "E-Commerce Furniture",
-    info: "This is an app built using React, It uses useEffect, useState and useRef hooks, It is an App used to prepare a list for grocery.",
-    techUsed: ["#react", "#tailwind"],
-    githubLink: "#",
-    demoLink: "#",
-  },
+  // {
+  //   id: 3,
+  //   img: img3,
+  //   title: "E-Commerce Furniture",
+  //   info: "This is an app built using React, It uses useEffect, useState and useRef hooks, It is an App used to prepare a list for grocery.",
+  //   techUsed: ["#react", "#tailwind"],
+  //   githubLink: "#",
+  //   demoLink: "#",
+  // },
 ];
 
 export const contactItems = [
