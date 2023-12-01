@@ -81,7 +81,7 @@ const Navbar = ({ theme, setTheme }) => {
       </ul>
 
       <div
-        className="fixed z-50 flex items-center justify-center w-10 h-10 bg-[#f5f5f5] drop-shadow-lg dark:bg-teal-700 dark:text-white rounded-full cursor-pointer top-2.5 right-2.5 "
+        className="fixed z-50 flex items-center justify-center w-10 h-10 bg-[#f5f5f5] drop-shadow-lg dark:bg-teal-700 dark:text-white rounded-full cursor-pointer top-2.5 right-3.5 "
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         {isMenuOpen ? (
@@ -95,7 +95,7 @@ const Navbar = ({ theme, setTheme }) => {
         onClick={() => {
           setTheme(theme === "dark" ? "light" : "dark");
         }}
-        className={`lg:hidden fixed bottom-2.5 right-2.5 flex items-center justify-center h-10 w-10 z-50 rounded-full text-md cursor-pointer duration-300 delay-100 drop-shadow-lg bg-[#f5f5f5] dark:bg-teal-700 dark:text-white`}
+        className={`lg:hidden fixed bottom-2.5 right-3.5 flex items-center justify-center h-10 w-10 z-50 rounded-full text-md cursor-pointer duration-300 delay-100 drop-shadow-lg bg-[#f5f5f5] dark:bg-teal-700 dark:text-white`}
       >
         {theme === "dark" ? (
           <div className="flex items-center gap-2">
