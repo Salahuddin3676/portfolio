@@ -69,7 +69,7 @@ const Navbar = ({ theme, setTheme }) => {
               key={id}
               className="py-2  w-full cursor-pointer justify-center flex duration-700 delay-100 items-center gap-4 hover:bg-[#f5f5f5] dark:hover:bg-teal-900"
             >
-              <div className=" flex items-center gap-4 w-[125px]">
+              <div className=" flex lg:hidden items-center gap-4 w-[125px]">
                 <div className="p-2 text-lg bg-white rounded-full drop-shadow-md dark:bg-teal-700 dark:border-none">
                   {icon}
                 </div>
@@ -81,7 +81,7 @@ const Navbar = ({ theme, setTheme }) => {
       </ul>
 
       <div
-        className="fixed z-50 flex items-center justify-center w-10 h-10 bg-[#f5f5f5] drop-shadow-lg dark:bg-teal-700 dark:text-white rounded-full cursor-pointer top-2.5 right-3.5 "
+        className="fixed z-50 flex items-center lg:hidden justify-center w-10 h-10 bg-[#f5f5f5] drop-shadow-lg dark:bg-teal-700 dark:text-white rounded-full cursor-pointer top-2.5 right-3.5 "
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         {isMenuOpen ? (
