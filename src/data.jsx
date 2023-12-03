@@ -7,9 +7,9 @@ import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { FaLocationDot } from "react-icons/fa6";
 import { BsWhatsapp } from "react-icons/bs";
 import { BiLogoGmail } from "react-icons/bi";
-import img1 from "./assets/images/pbg1.png";
+import img1 from "./assets/images/interior.png";
 import img2 from "./assets/images/notes.png";
-// import img3 from "./assets/images/p3.jpg";
+import img3 from "./assets/images/url.png";
 
 export const menuLinks = [
   {
@@ -110,15 +110,15 @@ export const projects = [
     githubLink: "https://github.com/Salahuddin3676/notes-keeper",
     demoLink: "https://salahuddin3676.github.io/notes-keeper/",
   },
-  // {
-  //   id: 3,
-  //   img: img3,
-  //   title: "E-Commerce Furniture",
-  //   info: "This is an app built using React, It uses useEffect, useState and useRef hooks, It is an App used to prepare a list for grocery.",
-  //   techUsed: ["#react", "#tailwind"],
-  //   githubLink: "#",
-  //   demoLink: "#",
-  // },
+  {
+    id: 3,
+    img: img3,
+    title: "Chrome Extension",
+    info: "This is a chrome extension built using JavaScript, It captures the url of the current tab and saves it in local storage and also renders it in the extension. Check the ReadMe on github for Usage",
+    techUsed: ["#JavaScript", "#HTML", "CSS"],
+    githubLink: "https://github.com/Salahuddin3676/url-grabber",
+    demoLink: "https://clipchamp.com/watch/NwErWI2PwrV",
+  },
 ];
 
 export const contactItems = [
