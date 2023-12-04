@@ -14,25 +14,24 @@ const About = () => {
   return (
     <section
       id="about"
-      className=" min-h-screen pt-20 lg:pt-0 
-       w-full flex items-center justify-center"
+      className="flex items-center justify-center w-full min-h-screen pt-20 lg:pt-0"
     >
-      <div className="w-full flex flex-col items-center lg:items-start">
+      <div className="flex flex-col items-center w-full lg:items-start">
         <h1
           data-aos="fade-up"
-          className="text-4xl lg:text-5xl font-bold dark:text-yellow-100 text-indigo-950 font-Poppins mb-8 lg:text-left "
+          className="mb-8 text-4xl font-bold lg:text-5xl dark:text-yellow-100 text-indigo-950 font-Poppins lg:text-left "
         >
           About Me
         </h1>
         <h3
           data-aos="fade-up"
-          className="lg:text-3xl text-2xl  mb-4 font-bold font-Montserrat text-center lg:text-left"
+          className="mb-4 text-2xl font-bold text-center lg:text-3xl font-Montserrat lg:text-left"
         >
           A dedicated Front-end Developer based in Bangalore, India
         </h3>
         <p
           data-aos="zoom-in"
-          className="font-Montserrat leading-7 text-center lg:text-left dark:text-gray-300 max-w-4xl mb-12"
+          className="max-w-4xl mb-12 leading-7 text-center font-Montserrat lg:text-left dark:text-gray-300"
         >
           As a Junior Front-End Developer, I possess an impressive stack of
           skills in HTML, CSS, JavaScript, React, Tailwind and SCSS. I excel in
@@ -43,12 +42,12 @@ const About = () => {
         </p>
         <div
           data-aos="fade-right"
-          className="flex flex-col lg:items-start  w-full items-center gap-10"
+          className="flex flex-col items-center w-full gap-10 lg:items-start"
         >
-          <h4 className="text-2xl border-black dark:border-white font-Montserrat font-bold border-b-2 pb-5">
+          <h4 className="pb-5 text-2xl font-bold border-b-2 border-black dark:border-white font-Montserrat">
             Tech Stack
           </h4>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 justify-center gap-3.5 md:gap-5 ">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 justify-center gap-3.5 md:gap-5 ">
             {skills.map((skill) => {
               const { id, title, icon } = skill;
               return (

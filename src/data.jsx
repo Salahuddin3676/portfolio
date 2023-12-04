@@ -1,6 +1,6 @@
 import { AiOutlineSend, AiFillHtml5 } from "react-icons/ai";
 import { BiHome, BiLogoTailwindCss } from "react-icons/bi";
-import { FaCss3Alt, FaReact, FaSass } from "react-icons/fa";
+import { FaCss3Alt, FaReact, FaSass, FaGitAlt } from "react-icons/fa";
 import { RiContactsLine, RiJavascriptFill } from "react-icons/ri";
 import { MdWorkOutline, MdScreenShare } from "react-icons/md";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
@@ -88,6 +88,16 @@ export const skills = [
     id: 7,
     title: "Responsive Design",
     icon: <MdScreenShare />,
+  },
+  {
+    id: 8,
+    title: "Git",
+    icon: <FaGitAlt />,
+  },
+  {
+    id: 9,
+    title: "Github",
+    icon: <BsGithub />,
   },
 ];
 
