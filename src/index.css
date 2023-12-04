@@ -6,6 +6,12 @@
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 .active {
   @apply dark:text-gray-400 border-b border-gray-400 font-semibold;
 }
