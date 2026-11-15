@@ -20,8 +20,8 @@ const Navbar = ({ theme, setTheme }) => {
             <span className="text-teal-900 dark:text-teal-400">dev</span>
           </h2>
 
-          <div className="items-center hidden gap-24 lg:flex">
-            <ul className="items-center hidden gap-10 font-medium lg:flex font-Montserrat">
+          <div className="items-center hidden gap-8 xl:gap-16 lg:flex">
+            <ul className="items-center hidden gap-6 font-medium xl:gap-8 lg:flex font-Montserrat">
               {menuLinks.map((links) => {
                 const { id, title, url } = links;
                 return (

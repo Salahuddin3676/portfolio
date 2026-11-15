@@ -8,7 +8,7 @@
 
 html,
 body {
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -29,7 +29,7 @@ body {
 }
 
 .showMenu {
-  height: 50vh;
+  height: 22rem;
   transition: height 0.3s ease-in-out;
   overflow: hidden;
 }

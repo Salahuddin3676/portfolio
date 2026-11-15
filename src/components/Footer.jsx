@@ -20,7 +20,7 @@ const Footer = () => {
           })}
         </div>
         <h4 className="text-xs lg:text-base text-center lg:text-left font-semibold font-Montserrat tracking-wide">
-          Copyright © 2023, Developed by{" "}
+          Copyright © 2026, Developed by{" "}
           <a
             className="text-lime-100 underline underline-offset-1"
             href="https://www.linkedin.com/in/salahuddin-quasmi-389156176"

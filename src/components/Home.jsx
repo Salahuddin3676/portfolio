@@ -23,19 +23,21 @@ const Home = () => {
           <img
             src={img}
             data-aos="fade-left"
+            alt="Ghazi Salahuddin"
             className=" rounded-full bg-white  dark:bg-slate-800 dark:border-blue-950 dark:border w-44 h-44 md:w-52 md:h-52 lg:w-80 lg:h-80 object-cover mx-auto bg-center"
           />
         </div>
         <div data-aos="fade-right" className="w-full lg:w-1/2">
-          <h1 className=" dark:text-yellow-50 text-4xl text-center lg:text-left leading-[48px] lg:leading-[70px] lg:text-6xl lg:max-w-max max-w-sm mx-auto lg:mx-0 font-bold font-Poppins mb-7">
-            Front-End React Developer
+          <h1 className="dark:text-yellow-50 text-[1.7rem] min-[400px]:text-4xl lg:text-[2.65rem] text-center lg:text-left leading-[1.15] max-w-xl mx-auto lg:mx-0 font-bold font-Poppins mb-7">
+            <span className="block">Frontend-focused</span>
+            <span className="block">Full-Stack Developer</span>
           </h1>
           <p className="dark:text-gray-200 font-Montserrat tracking-wide lg:max-w-md max-w-md mx-auto lg:mx-0 mb-10 text-center lg:text-left">
             Hi, I'm{" "}
             <span className=" bg-clip-text bg-gradient-to-br from-black to-indigo-600 duration-800 delay-200 dark:bg-gradient-to-br dark:from-white dark:to-yellow-400 text-transparent font-semibold ">
               Ghazi Salahuddin
             </span>
-            . A passionate Front-end React Developer based in Karnataka, India.
+            . A Frontend-focused Full-Stack Developer based in Bangalore, India.
           </p>
           <div className="flex flex-col items-center gap-8 max-w-md lg:mx-0 mx-auto lg:flex-row lg:justify-between lg:items-center">
             <div className="flex items-center gap-5 lg:gap-4 ">

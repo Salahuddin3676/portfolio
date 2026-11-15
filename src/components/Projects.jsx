@@ -1,9 +1,67 @@
 import React, { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { projects } from "../data";
-import { BsGithub } from "react-icons/bs";
-import { LiaExternalLinkAltSolid } from "react-icons/lia";
+import { alsoBuilt, selectedWork } from "../data";
+
+const caseStudy = [
+  { key: "problem", label: "Problem" },
+  { key: "built", label: "What I built" },
+  { key: "result", label: "Outcome" },
+];
+
+const WorkCard = ({ work }) => {
+  return (
+    <article
+      className={`w-full bg-white border border-gray-300 rounded-md dark:border-slate-600 dark:bg-teal-950 ${
+        work.lead ? "p-5 sm:p-7 lg:p-9" : "p-4 sm:p-5 lg:p-6"
+      }`}
+    >
+      <h3
+        className={`font-bold text-left font-Poppins ${
+          work.lead ? "mb-3 text-2xl lg:text-4xl" : "mb-2 text-2xl lg:text-3xl"
+        }`}
+      >
+        {work.title}
+      </h3>
+      <p
+        className={`mb-4 font-medium text-left font-Montserrat text-indigo-700 dark:text-yellow-100 ${
+          work.lead ? "text-base lg:text-lg" : "text-[15px]"
+        }`}
+      >
+        {work.outcome}
+      </p>
+      <p
+        className={`mb-5 text-left font-Montserrat dark:text-gray-300 ${
+          work.lead ? "text-base leading-7" : "text-[15px] leading-7"
+        }`}
+      >
+        {work.description}
+      </p>
+      <div className="flex flex-wrap items-center justify-start gap-2 mb-6">
+        {work.tags.map((tech) => (
+          <p
+            key={tech}
+            className="px-2 py-1 text-xs font-Montserrat odd:text-indigo-600 even:text-green-900 dark:odd:text-indigo-300 dark:even:text-green-400 border border-gray-200 dark:border-slate-600 rounded-sm"
+          >
+            {tech}
+          </p>
+        ))}
+      </div>
+      <div className="grid gap-5 pt-5 border-t border-gray-200 dark:border-slate-600 md:grid-cols-3">
+        {caseStudy.map((item) => (
+          <div key={item.key}>
+            <h4 className="mb-2 text-xs font-semibold tracking-wide uppercase font-Poppins text-indigo-950 dark:text-yellow-100">
+              {item.label}
+            </h4>
+            <p className="text-sm leading-6 text-left font-Montserrat dark:text-gray-300">
+              {work[item.key]}
+            </p>
+          </div>
+        ))}
+      </div>
+    </article>
+  );
+};
 
 const Projects = () => {
   useEffect(() => {
@@ -19,74 +77,36 @@ const Projects = () => {
       id="projects"
       className="flex flex-col items-center w-full min-h-screen pt-20 lg:items-start"
     >
-      <h1 className="mb-4 text-4xl font-bold lg:text-5xl dark:text-yellow-100 text-indigo-950 font-Poppins lg:text-left ">
-        Projects
+      <h1 className="mb-4 text-4xl font-bold text-center lg:text-5xl dark:text-yellow-100 text-indigo-950 font-Poppins lg:text-left">
+        Selected work
       </h1>
-      <p
-        data-aos="fade-right"
-        className="max-w-4xl mb-12 leading-7 text-center font-Montserrat lg:text-left dark:text-gray-300"
-      >
-        Here are the projects that I developed 👇
+      <p className="max-w-4xl mb-12 leading-7 text-center font-Montserrat lg:text-left dark:text-gray-300">
+        Product work at Zithara Technologies, Bangalore. Dec 2023–Present.
       </p>
 
-      <div className="flex flex-col items-center justify-between w-full gap-10">
-        {projects.map((project) => {
-          const { id, img, title, info, techUsed, githubLink, demoLink } =
-            project;
-          return (
-            <div
-              key={id}
-              className="flex flex-col items-center justify-between p-3 bg-white border border-gray-300 rounded-md lg:flex-row lg:px-10 lg:py-5 dark:border-slate-600 dark:bg-teal-950"
+      <div className="flex flex-col w-full gap-6">
+        {selectedWork.map((work) => (
+          <WorkCard key={work.id} work={work} />
+        ))}
+      </div>
+
+      <div className="w-full p-5 mt-6 border border-dashed rounded-md border-gray-300 dark:border-slate-600">
+        <h3 className="mb-1 text-lg font-bold text-left font-Poppins">
+          Also built
+        </h3>
+        <p className="mb-3 text-sm text-left font-Montserrat dark:text-gray-300">
+          Not in production.
+        </p>
+        <ul className="flex flex-col gap-2">
+          {alsoBuilt.map((item) => (
+            <li
+              key={item}
+              className="text-sm leading-6 text-left font-Montserrat dark:text-gray-300"
             >
-              <div className=" w-[95%] rounded-sm lg:w-[48%] mb-5 lg:mb-0">
-                <a href={demoLink} target="_blank">
-                  <img src={img} className="rounded-sm " alt="" />
-                </a>
-              </div>
-              <div
-                data-aos="fade-left"
-                className=" w-full lg:w-[45%] h-full py-5"
-              >
-                <h3 className="mb-5 text-2xl font-bold text-center lg:text-3xl font-Poppins">
-                  {title}
-                </h3>
-                <p className="mb-6 text-[15px] leading-7 text-center font-Montserrat dark:text-gray-300">
-                  {info}
-                </p>
-                <div className="flex items-center justify-center gap-3 mx-auto mb-8 rounded-sm w-44">
-                  {techUsed.map((tech, index) => {
-                    return (
-                      <p
-                        key={index}
-                        className="odd:text-indigo-500 shadow-md shadow-green-400 dark:shadow-slate-600 px-1.5 py-1 font-Montserrat even:text-green-900 dark:even:text-green-500"
-                      >
-                        {tech}
-                      </p>
-                    );
-                  })}
-                </div>
-                <div className="flex flex-col items-center justify-center gap-4 p-2 lg:gap-4 lg:flex-row">
-                  <a
-                    data-aos="fade-right"
-                    href={githubLink}
-                    target="_blank"
-                    className="flex items-center justify-center w-32 h-10 gap-2 text-sm font-semibold text-white duration-200 rounded-sm cursor-pointer hover:shadow-md hover:shadow-green-400 hover:bg-slate-900 font-Montserrat bg-slate-800 dark:bg-blue-400 dark:text-black"
-                  >
-                    Code <BsGithub className="text-xl" />
-                  </a>
-                  <a
-                    data-aos="fade-left"
-                    href={demoLink}
-                    target="_blank"
-                    className="flex items-center justify-center w-32 h-10 gap-2 text-sm font-semibold text-white duration-200 rounded-sm cursor-pointer hover:shadow-md hover:shadow-green-400 hover:bg-slate-900 font-Montserrat bg-slate-800 dark:bg-blue-400 dark:text-black"
-                  >
-                    Live Demo <LiaExternalLinkAltSolid className="text-2xl" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
