@@ -1,113 +1,71 @@
-import React, { useState } from "react";
-import { AiOutlineAppstore, AiOutlineClose } from "react-icons/ai";
-import { BsMoon, BsSun } from "react-icons/bs";
+import { useState } from "react";
 import { menuLinks } from "../data";
 
-const Navbar = ({ theme, setTheme }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [active, setActive] = useState("#home");
+const links = menuLinks.filter((link) => link.url !== "#home");
+
+const Navbar = () => {
+  const [open, setOpen] = useState(false);
 
   return (
-    <>
-      <nav
-        className={`fixed hidden z-50 bg-white duration-800 delay-200 dark:bg-teal-950 dark:text-white top-0 ${
-          isMenuOpen ? "showMenu" : "autoHeight"
-        } h-16 left-0 w-full shadow-md dark:shadow-slate-900 py-4 px-6 md:px-16 lg:px-28 md:flex md:flex-col lg:flex-row justify-between items-center`}
-      >
-        <div className="flex items-center justify-between w-full">
-          <h2 className="text-xl font-bold text-transparent delay-200 font-Poppins bg-clip-text bg-gradient-to-br from-red-700 to-black duration-800 dark:bg-gradient-to-br dark:from-white dark:to-indigo-400">
-            Salahuddin.
-            <span className="text-teal-900 dark:text-teal-400">dev</span>
-          </h2>
+    <header className="sticky top-0 z-50 border-b border-[#e7e7e2] bg-[#f4f4f1]/90 backdrop-blur">
+      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
+        <a href="#home" className="flex items-center gap-2.5 shrink-0">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1c1c1c] text-xs font-semibold text-white">
+            GS
+          </span>
+          <span className="hidden text-sm font-medium sm:block">Salahuddin</span>
+        </a>
 
-          <div className="items-center hidden gap-8 xl:gap-16 lg:flex">
-            <ul className="items-center hidden gap-6 font-medium xl:gap-8 lg:flex font-Montserrat">
-              {menuLinks.map((links) => {
-                const { id, title, url } = links;
-                return (
-                  <li
-                    key={id}
-                    className={` dark:hover:text-gray-400 hover:text-gray-500 transition-all duration-100`}
-                  >
-                    <a
-                      onClick={() => {
-                        setActive(`${url}`);
-                      }}
-                      href={url}
-                      className={`${
-                        active === url ? "active" : ""
-                      } cursor-pointer py-1`}
-                    >
-                      {title}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-
-            <div
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="hidden hover:scale-105 lg:block p-1.5 text-xl text-blue-900 cursor-pointer border border-gray-300  bg-[#f5f5f5]  rounded-full drop-shadow-lg "
+        <nav className="hidden items-center gap-7 md:flex">
+          {links.map((link) => (
+            <a
+              key={link.id}
+              href={link.url}
+              className="text-sm text-[#4d4d4d] transition-colors hover:text-[#1c1c1c]"
             >
-              {theme === "dark" ? <BsSun /> : <BsMoon />}
-            </div>
-          </div>
+              {link.title}
+            </a>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-3">
+          <p className="hidden text-sm text-[#6d6d68] lg:block">Bangalore, India</p>
+          <a
+            href="#contact"
+            className="hidden h-9 items-center rounded-full bg-[#1c1c1c] px-4 text-sm text-white md:inline-flex"
+          >
+            Contact
+          </a>
+          <button
+            type="button"
+            aria-label={open ? "Close menu" : "Open menu"}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-[#e0e0db] bg-white md:hidden"
+            onClick={() => setOpen((value) => !value)}
+          >
+            <span className="sr-only">Menu</span>
+            <span className="flex w-4 flex-col gap-1">
+              <span className={`h-px w-full bg-[#1c1c1c] ${open ? "translate-y-[2.5px] rotate-45" : ""}`} />
+              <span className={`h-px w-full bg-[#1c1c1c] ${open ? "-translate-y-[2.5px] -rotate-45" : ""}`} />
+            </span>
+          </button>
         </div>
-      </nav>
+      </div>
 
-      {/* ---Mobile--Section--- */}
-      <ul
-        className={`flex dark:bg-teal-900 dark:text-white bg-[#f5f5f5] fixed top-0 left-0 z-20 flex-col w-full ${
-          isMenuOpen ? "showMenu" : "hideMenu"
-        } justify-center duration-700 delay-100 lg:hidden items-center gap-3 font-Montserrat font-medium`}
-      >
-        {menuLinks.map((links) => {
-          const { id, title, url, icon } = links;
-          return (
-            <li
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              key={id}
-              className="py-2  w-full cursor-pointer justify-center flex duration-700 delay-100 items-center gap-4 hover:bg-[#f5f5f5] dark:hover:bg-teal-900"
+      {open && (
+        <nav className="border-t border-[#e7e7e2] bg-[#f4f4f1] px-5 py-3 md:hidden">
+          {links.map((link) => (
+            <a
+              key={link.id}
+              href={link.url}
+              onClick={() => setOpen(false)}
+              className="block py-3 text-base"
             >
-              <div className=" flex lg:hidden items-center gap-4 w-[125px]">
-                <div className="p-2 text-lg bg-white rounded-full drop-shadow-md dark:bg-teal-700 dark:border-none">
-                  {icon}
-                </div>
-                <a href={url}>{title}</a>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
-
-      <div
-        className="fixed z-50 flex items-center lg:hidden justify-center w-10 h-10 bg-[#f5f5f5] drop-shadow-lg dark:bg-teal-700 dark:text-white rounded-full cursor-pointer top-2.5 right-3.5 "
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      >
-        {isMenuOpen ? (
-          <AiOutlineClose className="text-2xl lg:hidden " />
-        ) : (
-          <AiOutlineAppstore className="text-2xl lg:hidden " />
-        )}
-      </div>
-
-      <div
-        onClick={() => {
-          setTheme(theme === "dark" ? "light" : "dark");
-        }}
-        className={`lg:hidden fixed bottom-2.5 right-3.5 flex items-center justify-center h-10 w-10 z-50 rounded-full text-md cursor-pointer duration-300 delay-100 drop-shadow-lg bg-[#f5f5f5] dark:bg-teal-700 dark:text-white`}
-      >
-        {theme === "dark" ? (
-          <div className="flex items-center gap-2">
-            <BsSun />
-          </div>
-        ) : (
-          <div className="flex items-center gap-2">
-            <BsMoon />
-          </div>
-        )}
-      </div>
-    </>
+              {link.title}
+            </a>
+          ))}
+        </nav>
+      )}
+    </header>
   );
 };
 

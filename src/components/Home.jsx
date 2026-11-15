@@ -1,68 +1,58 @@
-import React, { useEffect } from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
 import { socialLinks } from "../data";
-import { FiDownload } from "react-icons/fi";
 import img from "../assets/images/home-img.png";
 import resume from "../assets/resume.pdf";
 
 const Home = () => {
-  useEffect(() => {
-    Aos.init({
-      duration: 1500,
-    });
-  }, []);
-
   return (
-    <section
-      id="home"
-      className=" min-h-screen items-center flex justify-center lg:items-center w-full "
-    >
-      <div className="w-full min-h-screen md:h-auto flex flex-col items-center justify-center lg:flex-row-reverse lg:items-center lg:justify-between">
-        <div className="w-full lg:w-[45%] mb-10 lg:mb-0">
-          <img
-            src={img}
-            data-aos="fade-left"
-            alt="Ghazi Salahuddin"
-            className=" rounded-full bg-white  dark:bg-slate-800 dark:border-blue-950 dark:border w-44 h-44 md:w-52 md:h-52 lg:w-80 lg:h-80 object-cover mx-auto bg-center"
-          />
-        </div>
-        <div data-aos="fade-right" className="w-full lg:w-1/2">
-          <h1 className="dark:text-yellow-50 text-[1.7rem] min-[400px]:text-4xl lg:text-[2.65rem] text-center lg:text-left leading-[1.15] max-w-xl mx-auto lg:mx-0 font-bold font-Poppins mb-7">
-            <span className="block">Frontend-focused</span>
-            <span className="block">Full-Stack Developer</span>
-          </h1>
-          <p className="dark:text-gray-200 font-Montserrat tracking-wide lg:max-w-md max-w-md mx-auto lg:mx-0 mb-10 text-center lg:text-left">
-            Hi, I'm{" "}
-            <span className=" bg-clip-text bg-gradient-to-br from-black to-indigo-600 duration-800 delay-200 dark:bg-gradient-to-br dark:from-white dark:to-yellow-400 text-transparent font-semibold ">
-              Ghazi Salahuddin
-            </span>
-            . A Frontend-focused Full-Stack Developer based in Bangalore, India.
-          </p>
-          <div className="flex flex-col items-center gap-8 max-w-md lg:mx-0 mx-auto lg:flex-row lg:justify-between lg:items-center">
-            <div className="flex items-center gap-5 lg:gap-4 ">
-              {socialLinks.map((link) => {
-                const { id, title, url, icon } = link;
-                return (
-                  <div key={id}>
-                    <a
-                      href={url}
-                      target="_blank"
-                      className=" hover:text-indigo-900 dark:hover:text-gray-300 text-3xl"
-                    >
-                      {icon}
-                    </a>
-                  </div>
-                );
-              })}
-            </div>
-            <a
-              href={resume}
-              target="_blank"
-              className=" flex items-center font-Montserrat tracking-wide gap-2 px-4 h-10 lg:px-4 bg-slate-800 hover:bg-slate-900 dark:hover:bg-slate-50  text-white dark:bg-slate-200 dark:font-semibold lg:mr-2 dark:text-black rounded-md cursor-pointer"
-            >
-              Resume <FiDownload />
-            </a>
+    <section id="home" className="grid items-end gap-10 py-14 sm:py-20 lg:grid-cols-2 lg:gap-16 lg:py-28">
+      <div>
+        <img
+          src={img}
+          alt="Ghazi Salahuddin"
+          className="mb-6 h-20 w-20 rounded-full object-cover"
+        />
+        <h1 className="max-w-xl font-display text-[2.4rem] font-medium leading-[1.05] tracking-tight sm:text-6xl lg:text-[4.25rem]">
+          Hello! I'm Ghazi Salahuddin
+        </h1>
+      </div>
+
+      <div className="lg:pb-2">
+        <h2 className="max-w-md text-2xl font-medium leading-snug sm:text-3xl">
+          A Frontend-focused Full-Stack Developer based in Bangalore, India.
+        </h2>
+        <p className="mt-4 max-w-md text-base leading-7 text-[#5f5f5a]">
+          3 years building SaaS at Zithara with React.js, Next.js, Node.js, and
+          Express. Product work covers campaigns, web forms, real-time
+          messaging, and CRM.
+        </p>
+        <div className="mt-8 flex flex-wrap items-center gap-3">
+          <a
+            href={resume}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex h-11 items-center rounded-full bg-[#1c1c1c] px-5 text-sm text-white"
+          >
+            Resume
+          </a>
+          <a
+            href="#projects"
+            className="inline-flex h-11 items-center rounded-full border border-[#d9d9d4] bg-white px-5 text-sm"
+          >
+            See my work
+          </a>
+          <div className="flex items-center gap-2 pl-1">
+            {socialLinks.map((link) => (
+              <a
+                key={link.id}
+                href={link.url}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={link.title}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d9d9d4] bg-white text-lg"
+              >
+                {link.icon}
+              </a>
+            ))}
           </div>
         </div>
       </div>

@@ -12,24 +12,11 @@ body {
   overflow-x: hidden;
 }
 
-.active {
-  @apply dark:text-gray-400 border-b border-gray-400 font-semibold;
+body {
+  background: #f4f4f1;
+  color: #1c1c1c;
 }
 
-.hideMenu {
-  height: 0;
-  transition: height 0.4s ease-in-out;
-  overflow: hidden;
-}
-
-.autoHeight {
-  height: 64px;
-  transition: height 0.4s ease-in-out;
-  overflow: hidden;
-}
-
-.showMenu {
-  height: 22rem;
-  transition: height 0.3s ease-in-out;
-  overflow: hidden;
+section {
+  scroll-margin-top: 5.5rem;
 }

@@ -30,7 +30,7 @@ export const menuLinks = [
   },
   {
     id: 4,
-    title: "Projects",
+    title: "Work",
     url: "#projects",
     icon: <MdWorkOutline />,
   },

@@ -1,78 +1,85 @@
-import React, { useEffect, useRef, useState } from "react";
-import { contactItems } from "../data";
-import Aos from "aos";
-import "aos/dist/aos.css";
-import { PiClipboardThin } from "react-icons/pi";
+import { useState } from "react";
+import { contactItems, socialLinks } from "../data";
+
+const hrefFor = (item) => {
+  if (item.title === "Mail") return `mailto:${item.info}`;
+  if (item.title.startsWith("Contact")) return `tel:${item.info.replace(/\s/g, "")}`;
+  return null;
+};
 
 const Contact = () => {
-  const [alert, setAlert] = useState(false);
+  const [copied, setCopied] = useState("");
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setAlert(false);
-    }, [3000]);
-    return () => clearTimeout(timeout);
-  }, [alert]);
-
-  useEffect(() => {
-    Aos.init({
-      duration: 1200,
-      once: true,
-    });
-  }, []);
+  const copy = async (value) => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopied(value);
+      setTimeout(() => setCopied(""), 2000);
+    } catch {
+      setCopied("");
+    }
+  };
 
   return (
-    <section
-      id="contact"
-      className=" pt-20 flex items-center justify-center w-full"
-    >
-      <div className="flex flex-col items-center md:items-start w-full">
-        <div className="flex flex-col items-center md:items-start">
-          <h1
-            data-aos="fade-up"
-            className="text-4xl lg:text-5xl font-bold dark:text-yellow-100 text-indigo-950 font-Poppins mb-5 md:text-left "
-          >
-            Contact Me
-          </h1>
+    <section id="contact" className="border-t border-[#e7e7e2] py-16 sm:py-24">
+      <div className="mx-auto max-w-xl text-center">
+        <h2 className="font-display text-4xl font-medium leading-tight sm:text-6xl">
+          Let's talk
+        </h2>
+        <p className="mt-4 text-base leading-7 text-[#5f5f5a]">
+          Frontend-focused Full-Stack Developer based in Bangalore, India.
+        </p>
+      </div>
 
-          <h3
-            data-aos="fade-up"
-            className="lg:text-3xl text-2xl  mb-4 font-bold font-Montserrat text-center md:text-left"
-          >
-            Feel free to hit me up!
-          </h3>
-        </div>
+      <div className="mx-auto mt-10 grid max-w-3xl gap-3 sm:grid-cols-3">
+        {contactItems.map((item) => {
+          const href = hrefFor(item);
+          const body = (
+            <>
+              <span className="text-xl text-[#1c1c1c]">{item.icon}</span>
+              <span className="text-xs uppercase tracking-wide text-[#8a8a84]">
+                {item.title}
+              </span>
+              <span className="text-sm leading-5">{item.info}</span>
+            </>
+          );
 
-        <div className="flex flex-col items-center gap-12 flex-wrap w-full md:flex-row my-14">
-          {contactItems.map((item) => {
-            const { id, title, icon, info } = item;
-            return (
-              <div
-                data-aos="zoom-in"
-                key={id}
-                className="flex items-center md:w-[45%] md:justify-start justify-center gap-3.5 flex-col md:flex-row "
-              >
-                <div className=" rounded-full p-5 border border-gray-300 flex items-center justify-center text-3xl lg:text-4xl bg-white  text-red-600">
-                  {icon}
-                </div>
-                <div className="flex items-center gap-2 md:items-start justify-center flex-col">
-                  <h2 className="text-xl tracking-wide font-Poppins font-bold dark:text-white text-gray-600">
-                    {title}
-                  </h2>
-                  <p
-                    onClick={(e) => {
-                      navigator.clipboard.writeText(e.target.textContent);
-                      setAlert(true);
-                    }}
-                    className=" flex hover:opacity-80 items-center gap-2 cursor-pointer font-Montserrat tracking-wide text-sm"
-                  >
-                    {info}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+          return href ? (
+            <a
+              key={item.id}
+              href={href}
+              onClick={() => copy(item.info)}
+              className="flex flex-col items-center gap-2 rounded-3xl border border-[#e7e7e2] bg-white px-4 py-6 text-center"
+            >
+              {body}
+              {copied === item.info && (
+                <span className="text-xs text-[#6d6d68]">Copied</span>
+              )}
+            </a>
+          ) : (
+            <div
+              key={item.id}
+              className="flex flex-col items-center gap-2 rounded-3xl border border-[#e7e7e2] bg-white px-4 py-6 text-center"
+            >
+              {body}
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="mt-8 flex items-center justify-center gap-3">
+        {socialLinks.map((link) => (
+          <a
+            key={link.id}
+            href={link.url}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={link.title}
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d9d9d4] bg-white text-lg"
+          >
+            {link.icon}
+          </a>
+        ))}
       </div>
     </section>
   );
